@@ -7,14 +7,11 @@ mongoose.connect(url, ()=>{
     console.log('Terhubung ke MongoDB')
 })
 
-new Produk({
-    nama: 'Drone', 
-    harga: 15000000,
-    avail: false,
-    exp: Date().now
-    // exp: Date.now()
-}).save().then((x)=>{
-    console.log(x)
-}).catch((x)=>{
-    console.log(x)
+Produk.updateMany({
+    harga: {$gt: 0}
+}, {
+    nama: 'Barang Rahasia',
+    deskripsi: 'Barang langka'
+}, ()=>{
+    console.log('Data terupdate!')
 })

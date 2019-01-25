@@ -7,14 +7,11 @@ mongoose.connect(url, ()=>{
     console.log('Terhubung ke MongoDB')
 })
 
-new Produk({
-    nama: 'Drone', 
-    harga: 15000000,
-    avail: false,
-    exp: Date().now
-    // exp: Date.now()
-}).save().then((x)=>{
-    console.log(x)
-}).catch((x)=>{
-    console.log(x)
+Produk.updateOne({
+    _id: '5c4a8b9a66daed35885f972f'
+}, {
+    nama: 'DJI Drone',
+    harga: 18000000
+}, ()=>{
+    console.log('Data terupdate!')
 })
