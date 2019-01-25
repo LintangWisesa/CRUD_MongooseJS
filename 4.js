@@ -7,8 +7,8 @@ mongoose.connect(url, ()=>{
     console.log('Terhubung ke MongoDB')
 })
 
-Produk.find({
-    nama: 'Kemeja Batik'
-}, (error, data)=>{
+id = '5c4a84c3d8f537295c250884'
+// Produk.findById(id, (error, data)=>{
+Produk.findById(id, 'nama harga', (error, data)=>{
     console.log(data)
 })
