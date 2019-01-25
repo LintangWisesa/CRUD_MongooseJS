@@ -7,9 +7,8 @@ mongoose.connect(url, ()=>{
     console.log('Terhubung ke MongoDB')
 })
 
-Produk.find({
-    // nama: 'Kemeja Batik'
-    harga: { $gte: 180000 }
-}, (error, data)=>{
-    console.log(data)
+Produk.deleteOne({
+    nama: 'Celana Panjang'
+}, ()=>{
+    console.log('Data terhapus!')
 })
